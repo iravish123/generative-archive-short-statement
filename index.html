@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: Artificial and Machine Intelligence in Arts Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 
+    Infographic Plan
+    Narrative Structure:
+    1.  Introduction: Hook with key stats (experience, roles).
+    2.  Core Competencies: Visualize the breadth of skills from the PGTA role using a radar chart.
+    3.  Project Deep Dive ("Conversing Collections"): Use a flowchart to explain the AI/ML process.
+    4.  Module Alignment: Directly map experience to the three learning outcomes using structured cards.
+    5.  Technical Toolkit: Showcase key technologies.
+    
+    Color Palette Selection: "Energetic & Playful"
+    - #00A0B0 (Blue)
+    - #6A4A3C (Brown)
+    - #CC333F (Red)
+    - #EB6841 (Orange)
+    - #EDC951 (Yellow)
+
+    Visualization Choices & Justification (NO SVG / NO MERMAID JS):
+    - Profile Summary (Inform): Using a Donut Chart (Chart.js/Canvas) to show the composition of experience (Teaching vs. Creative AI). This provides a quick, high-level understanding.
+    - Core Competencies (Compare): A Radar Chart (Chart.js/Canvas) is ideal for comparing multiple, distinct skill sets (e.g., Pedagogy, AI Analysis, Database Design) against a central axis, showing a holistic skill profile.
+    - Project Flow (Organize): A Flow Chart built with structured HTML/CSS (divs, borders) is used to clearly and cleanly illustrate a process or workflow, avoiding prohibited libraries.
+    - Module Alignment (Organize): Using styled HTML cards provides a structured, clear way to present organized information and directly map experience to learning outcomes. Unicode characters serve as simple, effective icons.
+    
+    CRITICAL CONFIRMATION:
+    NEITHER Mermaid JS NOR SVG graphics were used in the creation of this document. All charts are rendered on <canvas> elements by Chart.js, and all diagrams are constructed using standard HTML elements and Tailwind CSS.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #00A0B0, #CC333F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black mb-2 gradient-text">Creative Computing Portfolio</h1>
+            <p class="text-lg md:text-xl text-gray-600">An Exploration of Artificial and Machine Intelligence in Arts Practice</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="introduction" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#00A0B0] mb-4">Profile Summary</h2>
+                        <p class="text-gray-600 mb-6">
+                            A seasoned Postgraduate Teaching Assistant at UCL with extensive experience in fundamental and advanced programming concepts. My work bridges the gap between technical instruction and creative application, focusing on how AI and Machine Learning can be leveraged within cultural and artistic contexts. My goal is to contribute a unique perspective grounded in both pedagogical practice and hands-on creative development.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <span class="text-4xl font-extrabold text-[#CC333F]">3</span>
+                                <p class="text-gray-600">Years of Experience</p>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <span class="text-4xl font-extrabold text-[#EB6841]">5+</span>
+                                <p class="text-gray-600">Student Groups Moderated</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="experienceChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">A balanced focus between foundational teaching and applied creative AI work.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="competencies" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="competenciesChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">A holistic skill set developed through teaching and project-based work.</p>
+                    </div>
+                    <div class="md:order-first">
+                        <h2 class="text-3xl font-bold text-[#00A0B0] mb-4">Core Competencies</h2>
+                        <p class="text-gray-600 mb-4">
+                            My role as a PGTA involved more than just teaching; it was a deep dive into the practical and theoretical aspects of computer science. This experience honed my ability to dissect complex topics, from database normalization to the nuances of AI-generated content, and make them accessible and engaging for students.
+                        </p>
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center"><span class="text-[#CC333F] text-2xl mr-3">●</span><span><strong class="font-semibold">Pedagogy & Mentoring:</strong> Moderating tutorials and labs for modules like Web Tech and Programming.</span></li>
+                            <li class="flex items-center"><span class="text-[#EB6841] text-2xl mr-3">●</span><span><strong class="font-semibold">Database Architecture:</strong> Guiding students in complex SQL, ER diagrams, and schema design.</span></li>
+                            <li class="flex items-center"><span class="text-[#EDC951] text-2xl mr-3">●</span><span><strong class="font-semibold">Critical AI Analysis:</strong> Developing methods to ethically evaluate and detect AI-generated content.</span></li>
+                            <li class="flex items-center"><span class="text-[#6A4A3C] text-2xl mr-3">●</span><span><strong class="font-semibold">Creative Application:</strong> Channeling technical knowledge into building interactive AI/ML projects.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#00A0B0] mb-2">Project Deep Dive</h2>
+                <p class="text-lg text-center text-gray-600 mb-8">Conversing Collections: An AI-Powered Generative Archive</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">The Concept</h3>
+                        <p class="text-gray-600 mb-6">
+                            This project is an interactive web application designed for a creative exploration of AI within cultural heritage. It allows users to "converse" with historical artifacts and collections. The AI, fine-tuned on specific historical datasets, acts as an expert, generating narratives and responses that bring the past to life. It's a practical demonstration of using AI not just as a tool, but as a creative partner in storytelling and cultural exploration.
+                        </p>
+
+                        <h3 class="text-2xl font-bold mb-4">Technical Workflow</h3>
+                        <p class="text-gray-600 mb-6">The system employs a clear, structured process to translate user queries into rich, context-aware narratives, demonstrating a full cycle of creative AI implementation.</p>
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-[#EB6841] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-md">1</div>
+                                <div class="ml-4 border-2 border-dashed border-gray-300 flex-1 p-3 rounded-lg">
+                                    <h4 class="font-bold">User Interaction</h4>
+                                    <p class="text-sm text-gray-600">User inputs a query about an artifact or collection.</p>
+                                </div>
+                            </div>
+                            <div class="ml-6 border-l-4 border-dotted border-[#00A0B0] h-8"></div>
+                            <div class="flex items-center">
+                                <div class="bg-[#EDC951] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-md">2</div>
+                                <div class="ml-4 border-2 border-dashed border-gray-300 flex-1 p-3 rounded-lg">
+                                    <h4 class="font-bold">AI Language Processing</h4>
+                                    <p class="text-sm text-gray-600">A core NLP model processes and understands the query's intent.</p>
+                                </div>
+                            </div>
+                             <div class="ml-6 border-l-4 border-dotted border-[#00A0B0] h-8"></div>
+                            <div class="flex items-center">
+                                <div class="bg-[#CC333F] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-md">3</div>
+                                <div class="ml-4 border-2 border-dashed border-gray-300 flex-1 p-3 rounded-lg">
+                                    <h4 class="font-bold">Fine-Tuned Model</h4>
+                                    <p class="text-sm text-gray-600">The query is passed to a model fine-tuned on a specific cultural heritage dataset.</p>
+                                </div>
+                            </div>
+                             <div class="ml-6 border-l-4 border-dotted border-[#00A0B0] h-8"></div>
+                            <div class="flex items-center">
+                                <div class="bg-[#00A0B0] text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-md">4</div>
+                                <div class="ml-4 border-2 border-dashed border-gray-300 flex-1 p-3 rounded-lg">
+                                    <h4 class="font-bold">Generative Output</h4>
+                                    <p class="text-sm text-gray-600">The model generates a creative, context-aware response for the user.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="alignment" class="bg-gray-50 py-12">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center text-[#00A0B0] mb-8">Alignment with Module Outcomes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#EB6841]">
+                            <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">🧠</span> Technical & Conceptual Processes</h3>
+                            <p class="text-gray-600">Experience in designing database schemas and AI detection methods provides a strong foundation for identifying and describing the technical and conceptual underpinnings of AI systems, from data structure to model output.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#EDC951]">
+                             <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">💻</span> Experimentation & Creative Projects</h3>
+                             <p class="text-gray-600">The "Conversing Collections" project serves as direct evidence of exploring and writing simple programs with ML techniques (NLP, fine-tuning) to create a tangible, creative project, aligning with Python-based exploration.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#CC333F]">
+                             <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-3xl mr-3">🌍</span> Critical & Ethical Analysis</h3>
+                            <p class="text-gray-600">Developing viva methods to assess AI-generated text demonstrates a proactive engagement in analyzing the cultural, social, and ethical implications of AI in art and academia, including bias and authenticity.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-200">
+            <p class="text-gray-500">This infographic was dynamically generated and is ready to be explored further in Creative Computing 2.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const FONT_COLOR = '#374151'; 
+        const GRID_COLOR = '#e5e7eb';
+
+        const PALETTE = {
+            blue: '#00A0B0',
+            brown: '#6A4A3C',
+            red: '#CC333F',
+            orange: '#EB6841',
+            yellow: '#EDC951'
+        };
+        
+        function wrapText(label) {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        const experienceData = {
+            labels: ['Technical Instruction & Pedagogy', 'Creative AI & Project Development'],
+            datasets: [{
+                label: 'Experience Focus',
+                data: [65, 35],
+                backgroundColor: [
+                    PALETTE.blue,
+                    PALETTE.orange
+                ],
+                borderColor: '#ffffff',
+                borderWidth: 4,
+                hoverOffset: 8
+            }]
+        };
+
+        const experienceConfig = {
+            type: 'doughnut',
+            data: experienceData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                             font: {
+                                size: 12
+                            },
+                            color: FONT_COLOR
+                        }
+                    },
+                    tooltip: commonTooltipOptions.plugins.tooltip
+                },
+                cutout: '60%',
+            }
+        };
+
+        const competenciesData = {
+            labels: [
+                'Pedagogy & Mentoring', 
+                'Database Architecture', 
+                'Critical AI Analysis', 
+                'Creative Application', 
+                'Programming Fundamentals'
+            ].map(wrapText),
+            datasets: [{
+                label: 'Skill Level',
+                data: [85, 80, 90, 75, 95],
+                fill: true,
+                backgroundColor: 'rgba(235, 104, 65, 0.2)',
+                borderColor: PALETTE.orange,
+                pointBackgroundColor: PALETTE.orange,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: PALETTE.orange
+            }]
+        };
+
+        const competenciesConfig = {
+            type: 'radar',
+            data: competenciesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 plugins: {
+                    legend: {
+                       display: false
+                    },
+                    tooltip: commonTooltipOptions.plugins.tooltip
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: GRID_COLOR },
+                        grid: { color: GRID_COLOR },
+                        pointLabels: {
+                            font: {
+                                size: 12
+                            },
+                            color: FONT_COLOR
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: FONT_COLOR,
+                            font: {
+                                size: 10
+                            }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        };
+
+        window.onload = function() {
+            const ctxExperience = document.getElementById('experienceChart').getContext('2d');
+            new Chart(ctxExperience, experienceConfig);
+
+            const ctxCompetencies = document.getElementById('competenciesChart').getContext('2d');
+            new Chart(ctxCompetencies, competenciesConfig);
+        };
+    </script>
+</body>
+</html>
